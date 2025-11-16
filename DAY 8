@@ -1,0 +1,26 @@
+---Convert all patient names to uppercase.
+
+SELECT
+     UPPER(name) AS Uppercase_Patient_name
+FROM patients
+
+---Find the length of each staff member's name.
+
+SELECT
+     LENGTH(staff_name) AS length_staff_name
+FROM staff
+
+---Concatenate staff_id and staff_name with a hyphen separator.
+SELECT
+     CONCAT(staff_name, '-',staff_id ) AS concat_staff_name_id
+FROM staff
+
+Question: Create a patient summary that shows patient_id, full name in uppercase, service in lowercase, 
+age category (if age >= 65 then 'Senior', if age >= 18 then 'Adult', else 'Minor'), and name length. 
+Only show patients whose name length is greater than 10 characters.
+SELECT
+     patient_id,
+     UPPER(name) AS Uppercase_Patient_name,
+    LOWER(service) AS lowecase_service_name
+     LENGTH(name) AS name length
+FROM patients
